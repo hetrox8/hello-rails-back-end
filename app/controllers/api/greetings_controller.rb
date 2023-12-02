@@ -1,6 +1,5 @@
-# app/controllers/messages_controller.rb
-class MessagesController < ApplicationController
+class Api::GreetingsController < ApplicationController
   def random_greeting
-    render json: { greeting: Message.order('RANDOM()').first&.content }
+    render json: { greeting: Greeting.order('RANDOM()').first&.message }
   end
 end
